@@ -3,9 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: path.resolve(__dirname,'../docs/index.js'),
+  entry: path.resolve(__dirname,'../line/index.js'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../docs'),
     filename: 'js/[name].js',
   },
   module: {
@@ -35,7 +35,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname,'../docs/index.html')
+      template: path.resolve(__dirname,'../line/index.html')
     })
   ]
 }
