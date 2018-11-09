@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: path.resolve(__dirname,'../line/index.js'),
+  entry: path.resolve(__dirname,'../site/index.js'),
   output: {
     path: path.resolve(__dirname, '../docs'),
     filename: 'js/[name].js',
@@ -20,7 +20,17 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "css-loader"
+          'to-string-loader',
+          'css-loader'
+        ]
+
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'to-string-loader',
+          'css-loader',
+          'sass-loader'
         ]
 
       }
@@ -35,7 +45,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname,'../line/index.html')
+      template: path.resolve(__dirname,'../site/index.html')
     })
   ]
 }
