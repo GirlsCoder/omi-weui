@@ -1,11 +1,4 @@
-import {render,define,WeElement} from 'omi'
+import { render } from 'omi'
+import './layout/ow-app'
 
-define('ow-docs',class extends WeElement{
-  render(){
-    return(
-      <div>hello ow!</div>
-    )
-  }
-})
-
-render(<ow-docs />,'#root')
+render(<ow-app />, '#root')
