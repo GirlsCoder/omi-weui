@@ -21,6 +21,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           'to-string-loader',
+          'style-loader',
           'css-loader'
         ]
 
@@ -29,6 +30,7 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'to-string-loader',
+          'style-loader',
           'css-loader',
           'sass-loader'
         ]
