@@ -1,0 +1,40 @@
+{
+  "name": "omi-weui",
+  "version": "0.0.1",
+  "description": "> weui for Omi",
+  "main": "dist/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.docs.js --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/132yse/omi-weui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/132yse/omi-weui/issues"
+  },
+  "homepage": "https://github.com/132yse/omi-weui#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^4.0.0-beta.3",
+    "style-loader": "^0.23.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "omi": "^4.0.24"
+  }
+}
