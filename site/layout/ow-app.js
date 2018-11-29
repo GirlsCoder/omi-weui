@@ -6,6 +6,14 @@ import './header/header'
 import './mainer/mainer'
 
 define('ow-app', class extends WeElement {
+  css(){
+    return `
+    .page{
+      max-width:375px;
+      margin:0 auto;
+    }
+    `
+  }
   render() {
     return (
       <div className="page">

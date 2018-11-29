@@ -3,18 +3,22 @@ $primary-disabled-color: #9ed99d;
 $warn-color: #e64340;
 $warn-disabled-color: #ec8b89;
 $secondary-color: #353535;
-$secondary-disabled-color: rgba(0, 0, 0, 0.3);
+$secondary-disabled-color: rgba(0, 0, 0, .3);
+
+.ow-button{
+  padding: 10px 20px
+}
 
 .weui-button {
   outline: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   padding: 14px;
   width: 100%;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 10px;
+  box-sizing: border-box
 }
 
 .weui-button-small {

@@ -6,7 +6,7 @@ define('ow-button', class extends WeElement {
     return style
   }
   render(props) {
-    const disabled = props.disabled ? 'disabled' : null
+    const disabled = props.disabled ? 'weui-button-disabled' : null
     const size = props.size&&props.size==='small'?'weui-button-small':'weui-button'
     const type = props.type?`weui-button-${props.type}`:'weui-button-primary'
     return (

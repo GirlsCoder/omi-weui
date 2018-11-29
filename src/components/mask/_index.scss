@@ -6,3 +6,6 @@
   right: 0;
   background: rgba(0, 0, 0, 0.8);
 }
+:host-context(#root) h1 {
+  background-color: #eef;
+}
