@@ -17,6 +17,7 @@ define('ow-app', class extends WeElement {
   render() {
     return (
       <div className="page">
+      <i class="ow weui-loading"></i>
         <ow-header />
         <ow-mainer />
       </div>
