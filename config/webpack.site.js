@@ -13,6 +13,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        include: [
+          resolve('node_modules/omi-weui'),
+        ],
         use: {
           loader: 'babel-loader'
         }
@@ -20,7 +23,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'to-string-loader',
           'style-loader',
           'css-loader'
         ]
@@ -30,7 +32,6 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'to-string-loader',
-          'style-loader',
           'css-loader',
           'sass-loader'
         ]
@@ -49,5 +50,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname,'../site/index.html')
     })
-  ]
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, "../docs"),
+    compress: true,
+    port: 3000,
+    historyApiFallback: true,
+    hot: true
+  }
 }
