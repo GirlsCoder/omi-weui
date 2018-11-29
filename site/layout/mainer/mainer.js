@@ -5,12 +5,14 @@ import '../../../src/components/button'
 import '../../../src/components/article'
 import '../../../src/components/dialog'
 import '../../../src/components/loading'
+import '../../../src/components/toptip'
 
 define('ow-mainer', class extends WeElement {
   static observe = true
 
   data = {
-    showDialog: false
+    showDialog: false,
+    showToptip: false
   }
   close = () => {
     this.data.showDialog = false
@@ -26,6 +28,15 @@ define('ow-mainer', class extends WeElement {
   show = () => {
     this.data.showDialog = true
   }
+
+  toptip = () => {
+    this.data.showToptip = true
+  }
+
+  hide = () => {
+    this.data.showToptip = false
+  }
+
   render(props, data) {
     return (
       <div className="mainer">
@@ -87,9 +98,20 @@ define('ow-mainer', class extends WeElement {
           <p>size</p>
         </section>
 
-        <ow-loading size='40px' />
+        <ow-loading size="40px" />
 
+        <section>
+          <h1>toptip</h1>
+          <p>msg type:primary/warn</p>
+          <button onClick={this.toptip}>dialog</button>
+        </section>
 
+        <ow-toptip
+          msg="你答应要娶我的……"
+          type="warn"
+          show={data.showToptip}
+          hide={this.hide}
+        />
       </div>
     )
   }
