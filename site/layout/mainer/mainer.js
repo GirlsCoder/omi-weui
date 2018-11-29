@@ -2,6 +2,7 @@ import { define, WeElement } from 'omi'
 import style from './_mainer.scss'
 
 import '../../../src/components/button'
+import '../../../src/components/mask'
 
 define('ow-mainer', class extends WeElement {
   css() {
@@ -21,6 +22,7 @@ define('ow-mainer', class extends WeElement {
         <ow-button type='secondary'>secondary</ow-button>
         <ow-button type='secondary' disabled>secondary disabled</ow-button>
         <ow-button size='small'>mini</ow-button>
+        <ow-mask disabled></ow-mask>
       </div>
     )
   }

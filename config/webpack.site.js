@@ -13,9 +13,6 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        include: [
-          resolve('node_modules/omi-weui'),
-        ],
         use: {
           loader: 'babel-loader'
         }
