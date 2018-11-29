@@ -6,9 +6,14 @@
 
 src 为组件源码 line 为线上文档
 
+开发
+```shell
+yarn dev
+```
+
 后编译配置通过 babel-loader 的 include 选项
 
-````javascript
+```javascript
 {
     test: /\.js$/,
     loader: 'babel-loader',
@@ -16,7 +21,7 @@ src 为组件源码 line 为线上文档
 		resolve('node_modules/omi-weui'),
 	]
 },
-      ```
+```
 
 按需引入需要安装 `babel-plugin-transform-modules`, 并配置如下：
 ```JavaScript
@@ -30,7 +35,3 @@ src 为组件源码 line 为线上文档
   }]
 ]
 ````
-
-```shell
-yarn dev
-```
