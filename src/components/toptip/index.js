@@ -10,6 +10,7 @@ define('ow-toptip', class extends WeElement {
   }
   render(props) {
     let display = props.show ? 'block' : 'none'
+    let top = props.show ? '0' : '-40px'
     setTimeout(() => {
       this.hide()
     }, 4000)
@@ -17,7 +18,7 @@ define('ow-toptip', class extends WeElement {
       ? `weui-toptip-${props.type}`
       : 'weui-toptip-primary'
     return (
-      <div className={`ow-toptip ${type}`} style={{ display }}>
+      <div className={`ow-toptip ${type}`} style={{top}}>
         {props.msg}
       </div>
     )
