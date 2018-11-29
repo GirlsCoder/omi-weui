@@ -1,3 +1,5 @@
+$primary-color: #1aad19;
+
 .ow-dialog {
   position: fixed;
   width: 80%;
@@ -27,8 +29,10 @@
     box-sizing: border-box;
     border-top: 1px solid #eee;
   }
- 
-}
- a:nth-child(1) {
+  .ok {
+    color: $primary-color;
+  }
+  .close {
     border-right: 1px solid #eee;
   }
+}

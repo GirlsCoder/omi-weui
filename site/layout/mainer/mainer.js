@@ -2,15 +2,22 @@ import { define, WeElement } from 'omi'
 import style from './_mainer.scss'
 
 import '../../../src/components/button'
-import '../../../src/components/mask'
 import '../../../src/components/article'
 import '../../../src/components/dialog'
+import '../../../src/components/loading'
 
 define('ow-mainer', class extends WeElement {
   static observe = true
 
   data = {
     showDialog: false
+  }
+  close = () => {
+    this.data.showDialog = false
+  }
+  confirm = () => {
+    alert('回调：入洞房！')
+    this.data.showDialog = false
   }
   css() {
     return style
@@ -67,11 +74,22 @@ define('ow-mainer', class extends WeElement {
         </section>
 
         <ow-dialog
-          buttons={['取消', '确定']}
+          type="confirm"
           show={data.showDialog}
           title="确定嫁给我吗？"
           content="一生一世……"
+          close={this.close}
+          confirm={this.confirm}
         />
+
+        <section>
+          <h1>loading</h1>
+          <p>size</p>
+        </section>
+
+        <ow-loading size='40px' />
+
+
       </div>
     )
   }

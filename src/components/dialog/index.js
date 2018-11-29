@@ -3,23 +3,38 @@ import style from './_index.scss'
 import '../mask'
 
 define('ow-dialog', class extends WeElement {
+  close() {
+    this.props.close()
+  }
+
+  confirm(){
+    this.props.confirm()
+  }
+
   css() {
     return style
   }
 
   render(props) {
-    console.log(props)
-    return props.show ? (
-      <div className="wrap">
+    const display = props.show ? 'block' : 'none'
+    return (
+      <div className="wrap" style={{ display }}>
         <div className="ow-dialog">
           <h1>{props.title}</h1>
           <p>{props.content}</p>
-          {props.buttons.map(i => {
-            return <a>{i}</a>
-          })}
+          {props.type === 'confirm' ? (
+            <div>
+              <a className="close" onClick={this.close}>
+                取消
+              </a>
+              <a className="ok" onClick={this.confirm}>确定</a>
+            </div>
+          ) : (
+            <a className="ok" onClick={this.confirm}>确定</a>
+          )}
         </div>
         <ow-mask show={props.show} />
       </div>
-    ) : null
+    )
   }
 })
